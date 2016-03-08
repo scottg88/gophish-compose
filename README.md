@@ -17,7 +17,9 @@ __Start the container:__
 Upgrading with Docker Compose, perform the following from the folder holding docker-compose.yml:
 
 >docker-compose stop
->docker-compose rm
->docker-compose pull
->docker-compose -d up
 
+>docker-compose rm
+
+>docker-compose pull
+
+>docker-compose -d up

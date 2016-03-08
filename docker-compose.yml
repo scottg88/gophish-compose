@@ -1,0 +1,17 @@
+version: '2'
+services:
+  app:
+    image: scottg88/gophish:latest
+    ports:
+      - "3333:3333"
+      - "443:443"
+    volumes:
+      - /srv/gophish/database:/app/database
+      - /srv/gophish/static/user:/app/static/user
+      - /srv/gophish/config.json:/app/config.json
+      - /srv/gophish/admin.crt:/app/admin.crt
+      - /srv/gophish/admin.key:/app/admin.key
+      - /srv/gophish/phish.crt:/app/phish.crt
+      - /srv/gophish/phish.key:/app/phish.key
+    restart: always
+

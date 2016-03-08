@@ -11,15 +11,15 @@ Copy the "admin" and "phish" certificates to /srv/gophish/ (by default) and __up
 >chmod 0600 /srv/gophish/admin.* /srv/gophish/phish.*
 
 __Start the container:__
->docker-compose -d up
+>docker-compose up -d
 
 ##Upgrading
 Upgrading with Docker Compose, perform the following from the folder holding docker-compose.yml:
 
 >docker-compose stop
 
->docker-compose rm
+>docker-compose down
 
 >docker-compose pull
 
->docker-compose -d up
+>docker-compose up -d

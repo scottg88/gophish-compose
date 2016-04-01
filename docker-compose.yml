@@ -7,11 +7,22 @@ services:
       - "443:443"
     volumes:
       - /srv/gophish/database:/app/database
-      - /srv/gophish/static/user:/app/static/user
+      - /srv/gophish/static/endpoint:/app/static/endpoint
       - /srv/gophish/config.json:/app/config.json
       - /srv/gophish/admin.crt:/app/admin.crt
       - /srv/gophish/admin.key:/app/admin.key
       - /srv/gophish/phish.crt:/app/phish.crt
       - /srv/gophish/phish.key:/app/phish.key
     restart: always
-
+    links:
+      - mta
+    depends_on:
+      - mta
+  mta:
+    image: catatnight/postfix
+    env_file:
+      - /srv/gophish/.env_secret
+      - /srv/gophish/.env
+    expose:
+      - "587"
+      - "25"

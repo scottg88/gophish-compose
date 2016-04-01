@@ -36,7 +36,6 @@ docker-compose up -d
 Upgrading with Docker Compose, perform the following from the folder holding docker-compose.yml (default: /srv/gophish):
 
 ```
-docker-compose down
 docker-compose pull
 docker-compose up -d
 ```

@@ -1,2 +1,8 @@
 .env
 .env_secret
+certs/
+conf.d/*.conf
+!conf.d/*.sample
+!conf.d/0*.conf
+database/
+static/
